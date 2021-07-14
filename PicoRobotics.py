@@ -50,10 +50,10 @@ class KitronikPicoRobotics:
 
     def servoWrite(self,servo, degrees):
         #check the degrees is a reasonable number. we expect 0-180, so cap at those values.
-        if(degrees>170):
-            degrees = 170
-        elif (degrees<10):
-            degrees = 10
+        if(degrees>180):
+            degrees = 179
+        elif (degrees<0):
+            degrees = 5
         #check the servo number
         if((servo<1) or (servo>8)):
             raise Exception("INVALID SERVO NUMBER") #harsh, but at least you'll know
